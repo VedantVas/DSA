@@ -19,7 +19,7 @@ vector<int> Rearrange_array(vector<int>nums){
 }
 
 int main(){
-    vector<int> nums = {1,-2,-3,4,-3,3};
+    vector<int> nums = {1,-2,-3,4,-3,3};//number of -ve and +ve are same i.e n/2
     vector<int>ans = Rearrange_array(nums);
     int n = ans.size();
     for(int i =0;i<n;i++){
