@@ -37,7 +37,7 @@ public:
     vector<int> searchRange_lower_upper(vector<int>& nums, int target) {
         int n = nums.size();
         int first = lower_bound(nums, n, target);
-        if(first==-1)return {-1,-1};
+        if(first == n || nums[first]!= target) return {-1,-1};
         int last = upper_bound(nums, n, target)-1;
         return {first, last};
     }
@@ -52,4 +52,5 @@ int main(){
         cout<<ans[i]<<" ";
     }
     return 0;
+
 }
