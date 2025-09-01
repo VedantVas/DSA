@@ -41,8 +41,33 @@ Node* convertArr2LL(vector<int>arr){
     return head;
 }
 
+void makeLoop(Node* head, int value) {
+    Node* temp = head;
+    Node* loopNode = NULL;
+    Node* tail = NULL;
+
+    while (temp != NULL) {
+        if (temp->data == value) {
+            loopNode = temp;
+        }
+        if (temp->next == NULL) {
+            tail = temp;
+        }
+        temp = temp->next;
+    }
+    if (tail && loopNode) {
+        tail->next = loopNode; // create loop
+    }
+}
+
+
 int main(){
     vector<int> nums = {1,2,3,4,5,6,7,8,9};
-    convertArr2LL(nums);
-    
+    Node* head = convertArr2LL(nums);
+    int value;
+    cin>>value;
+    //makeLoop(head,value);
+    bool ans = findloop(head);
+    cout<<ans;
+    return 0;
 }
